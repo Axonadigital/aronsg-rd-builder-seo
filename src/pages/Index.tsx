@@ -4,20 +4,18 @@ import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Phone, ArrowRight, Hammer, TreePine, Shield, Users } from "lucide-react";
 import heroImg from "@/assets/hero-byggprojekt-jamtland.jpg";
-import imgTimmerhus from "@/assets/tjanst-timmerhus.jpg";
-import imgTakbyte from "@/assets/tjanst-takbyte.jpg";
-import imgFasad from "@/assets/tjanst-fasadrenovering.jpg";
+import imgNybyggnation from "@/assets/projekt-nybyggnation.jpg";
 import imgTillbyggnad from "@/assets/tjanst-tillbyggnad.jpg";
-import imgLosvirkeshus from "@/assets/tjanst-losvirkeshus.jpg";
-import imgJordbruk from "@/assets/tjanst-jordbruksbyggnad.jpg";
+import imgRenovering from "@/assets/projekt-renovering.jpg";
+import imgTakbyte from "@/assets/tjanst-takbyte.jpg";
+import imgFinsnickeri from "@/assets/projekt-finsnickeri.jpg";
 
 const projects = [
-  { title: "Lösvirkeshus", slug: "losvirkeshus", img: imgLosvirkeshus, desc: "Nybyggnation med hög kvalitet och genomtänkt planering." },
-  { title: "Timmerhus", slug: "timmerhus", img: imgTimmerhus, desc: "Traditionella timmerhus med modern komfort." },
-  { title: "Om- & tillbyggnader", slug: "om-och-tillbyggnader", img: imgTillbyggnad, desc: "Utöka eller förnya ditt hem professionellt." },
-  { title: "Takbyten", slug: "takbyten", img: imgTakbyte, desc: "Komplett takbyte med material av högsta kvalitet." },
-  { title: "Fasadrenoveringar", slug: "fasadrenoveringar", img: imgFasad, desc: "Ge ditt hus nytt liv med professionell renovering." },
-  { title: "Jordbruksbyggnader", slug: "jordbruksbyggnader", img: imgJordbruk, desc: "Godkända av Länsstyrelsen – planering och byggnation." },
+  { title: "Nybyggnation", slug: "nybyggnation", img: imgNybyggnation, desc: "Lösvirkeshus, timmerhus och jordbruksbyggnader – vi bygger från grunden." },
+  { title: "Om- & tillbyggnader", slug: "om-och-tillbyggnader", img: imgTillbyggnad, desc: "Utöka eller förnya ditt hem med professionella lösningar." },
+  { title: "Renoveringar", slug: "renoveringar", img: imgRenovering, desc: "Fasadrenoveringar, badrum, kök och helrenoveringar." },
+  { title: "Takbyten", slug: "takbyten", img: imgTakbyte, desc: "Komplett takbyte med klimatanpassade material." },
+  { title: "Finsnickeri", slug: "finsnickeri", img: imgFinsnickeri, desc: "Skräddarsytt snickeri, inredning och detaljarbeten." },
 ];
 
 const values = [
@@ -31,7 +29,7 @@ const Index = () => (
   <Layout>
     <SEOHead
       title="Byggfirma i Jämtland | Aronsgård Bygg & Service"
-      description="Aronsgård Bygg & Service – byggfirma i Hallen, Jämtland. Timmerhus, lösvirkeshus, takbyten, fasadrenoveringar och jordbruksbyggnader. Ring 073-800 09 79."
+      description="Aronsgård Bygg & Service – byggfirma i Hallen, Jämtland. Nybyggnation, renoveringar, takbyten, finsnickeri och om- & tillbyggnader. Ring 073-800 09 79."
       canonical="/"
     />
 
@@ -40,7 +38,7 @@ const Index = () => (
       "@type": "LocalBusiness",
       "@id": "https://aronsgard-bygg.se/#business",
       "name": "Aronsgård Bygg & Service",
-      "description": "Byggfirma i Jämtland med erfarenhet inom timmerhus, lösvirkeshus, takbyten, fasadrenoveringar och jordbruksbyggnader.",
+      "description": "Byggfirma i Jämtland – nybyggnation, renoveringar, takbyten, finsnickeri och om- & tillbyggnader.",
       "url": "https://aronsgard-bygg.se",
       "telephone": "+46738000979",
       "email": "aronsgard.bos@icloud.com",
@@ -80,7 +78,7 @@ const Index = () => (
             <span className="text-primary"> kvalitet</span> från grund till tak
           </h1>
           <p className="mt-6 text-secondary-foreground/70 text-lg md:text-xl max-w-xl leading-relaxed">
-            Bred erfarenhet inom timmerhus, lösvirkeshus, renoveringar och jordbruksbyggnader. Vi utgår från Hallen och verkar i hela Jämtland.
+            Bred erfarenhet inom nybyggnation, renoveringar, takbyten och finsnickeri. Vi utgår från Hallen och verkar i hela Jämtland.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Button variant="hero" size="lg" asChild>
@@ -162,7 +160,7 @@ const Index = () => (
           <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">Våra projekt</p>
           <h2 className="mb-4">Vad vi bygger</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Vi erbjuder ett brett utbud av byggtjänster i Jämtland. Oavsett om det gäller nybyggnation, renovering eller jordbruksbyggnader – vi levererar kvalitet.
+            Vi erbjuder ett brett utbud av byggtjänster i Jämtland – från nybyggnation och renoveringar till finsnickeri och takbyten.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -176,8 +174,8 @@ const Index = () => (
                 <img
                   src={s.img}
                   alt={`${s.title} – byggprojekt i Jämtland`}
-                  width={800}
-                  height={600}
+                  width={896}
+                  height={672}
                   loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -209,7 +207,7 @@ const Index = () => (
         <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">Kom igång</p>
         <h2 className="text-secondary-foreground mb-4">Redo att starta ditt byggprojekt?</h2>
         <p className="text-secondary-foreground/60 max-w-xl mx-auto mb-10 text-lg">
-          Vi erbjuder fast pris på totalentreprenad eller arbete på löpande kostnad. ROT-avdrag tillämpas där det är aktuellt. Kontakta oss för en kostnadsfri offert.
+          Vi erbjuder fast pris på totalentreprenad eller arbete på löpande kostnad. ROT-avdrag tillämpas där det är aktuellt.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Button variant="hero" size="lg" asChild>
