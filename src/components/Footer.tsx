@@ -13,12 +13,11 @@ const Footer = () => (
       <div>
         <h3 className="text-primary font-serif text-xl mb-4">Projekt</h3>
         <ul className="space-y-2 text-sm">
-          <li><Link to="/projekt/losvirkeshus" className="text-secondary-foreground/60 hover:text-primary transition-colors">Lösvirkeshus</Link></li>
-          <li><Link to="/projekt/timmerhus" className="text-secondary-foreground/60 hover:text-primary transition-colors">Timmerhus</Link></li>
-          <li><Link to="/projekt/om-och-tillbyggnader" className="text-secondary-foreground/60 hover:text-primary transition-colors">Om- och tillbyggnader</Link></li>
+          <li><Link to="/projekt/nybyggnation" className="text-secondary-foreground/60 hover:text-primary transition-colors">Nybyggnation</Link></li>
+          <li><Link to="/projekt/om-och-tillbyggnader" className="text-secondary-foreground/60 hover:text-primary transition-colors">Om- & tillbyggnader</Link></li>
+          <li><Link to="/projekt/renoveringar" className="text-secondary-foreground/60 hover:text-primary transition-colors">Renoveringar</Link></li>
           <li><Link to="/projekt/takbyten" className="text-secondary-foreground/60 hover:text-primary transition-colors">Takbyten</Link></li>
-          <li><Link to="/projekt/fasadrenoveringar" className="text-secondary-foreground/60 hover:text-primary transition-colors">Fasadrenoveringar</Link></li>
-          <li><Link to="/projekt/jordbruksbyggnader" className="text-secondary-foreground/60 hover:text-primary transition-colors">Jordbruksbyggnader</Link></li>
+          <li><Link to="/projekt/finsnickeri" className="text-secondary-foreground/60 hover:text-primary transition-colors">Finsnickeri</Link></li>
         </ul>
       </div>
       <div>

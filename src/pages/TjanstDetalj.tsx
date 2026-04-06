@@ -4,12 +4,11 @@ import SEOHead from "@/components/SEOHead";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
-import imgLosvirkeshus from "@/assets/tjanst-losvirkeshus.jpg";
-import imgTimmerhus from "@/assets/tjanst-timmerhus.jpg";
+import imgNybyggnation from "@/assets/projekt-nybyggnation.jpg";
 import imgTillbyggnad from "@/assets/tjanst-tillbyggnad.jpg";
+import imgRenovering from "@/assets/projekt-renovering.jpg";
 import imgTakbyte from "@/assets/tjanst-takbyte.jpg";
-import imgFasad from "@/assets/tjanst-fasadrenovering.jpg";
-import imgJordbruk from "@/assets/tjanst-jordbruksbyggnad.jpg";
+import imgFinsnickeri from "@/assets/projekt-finsnickeri.jpg";
 import NotFound from "./NotFound";
 
 interface ServiceData {
@@ -24,93 +23,79 @@ interface ServiceData {
 }
 
 const serviceData: Record<string, ServiceData> = {
-  losvirkeshus: {
-    title: "Lösvirkeshus",
-    metaTitle: "Lösvirkeshus i Jämtland | Aronsgård Bygg & Service",
-    metaDesc: "Vi bygger lösvirkeshus i Jämtland med fokus på kvalitet och hållbarhet. Fast pris eller löpande kostnad. Kontakta oss för offert.",
-    img: imgLosvirkeshus,
-    alt: "Nybyggnation av lösvirkeshus i Jämtland",
-    intro: "Vi bygger lösvirkeshus i Jämtland och hela regionen – från grunden och upp. Varje projekt planeras noggrant för att leverera ett hem som håller i generationer.",
+  nybyggnation: {
+    title: "Nybyggnation",
+    metaTitle: "Nybyggnation i Jämtland | Aronsgård Bygg & Service",
+    metaDesc: "Vi bygger lösvirkeshus, timmerhus och jordbruksbyggnader i Jämtland. Kvalitet från grunden. Ring 073-800 09 79 för offert.",
+    img: imgNybyggnation,
+    alt: "Nybyggnation av trähus i Jämtlands vinterlandskap",
+    intro: "Vi bygger från grunden – lösvirkeshus, timmerhus och jordbruksbyggnader i hela Jämtland. Varje projekt planeras noggrant för att leverera ett resultat som håller i generationer.",
     content: [
-      "Ett lösvirkeshus byggs med löst virke – bärande stomme, regelstomme, isolering och beklädnad sätts ihop på plats. Det ger stor frihet i utformningen och möjligheten att anpassa huset helt efter dina önskemål och tomtens förutsättningar.",
-      "Vi på Aronsgård Bygg & Service har bred erfarenhet av att bygga lösvirkeshus i Jämtland. Vi tar ansvar för hela processen – från planering och materialanskaffning till färdigt resultat.",
-      "Vi erbjuder fast pris på totalentreprenad eller arbete på löpande kostnad. ROT-avdrag tillämpas där det är aktuellt."
+      "Nybyggnation är kärnan i vår verksamhet. Vi har bred erfarenhet av att bygga lösvirkeshus med modern konstruktion och stor frihet i utformningen, samt traditionella timmerhus som kombinerar klassiskt hantverk med modern komfort.",
+      "Vi bygger även jordbruksbyggnader godkända av Länsstyrelsen – ladugårdar, maskinhaller, förråd och stall anpassade för Jämtlands klimat med tunga snölaster och hårda vintrar.",
+      "Oavsett om du vill ha ett enplanshus, timmerstuga eller en ekonomibyggnad tar vi ansvar för hela processen – från planering och materialanskaffning till färdigt resultat. Vi erbjuder fast pris på totalentreprenad eller arbete på löpande kostnad."
     ],
-    features: ["Skräddarsydda lösningar", "Hög energieffektivitet", "Totalentreprenad eller löpande kostnad", "ROT-avdrag där aktuellt", "Lokal förankring i Jämtland"]
-  },
-  timmerhus: {
-    title: "Timmerhus",
-    metaTitle: "Timmerhus i Jämtland | Aronsgård Bygg & Service",
-    metaDesc: "Professionell timmerhusbyggnation i Jämtland. Traditionellt hantverk med modern komfort. Ring 073-800 09 79 för offert.",
-    img: imgTimmerhus,
-    alt: "Traditionellt timmerhusbygge med handhuggna stockar",
-    intro: "Timmerhus är en del av det svenska kulturarvet, och vi har bred erfarenhet inom timmerhusbyggnation i Jämtland.",
-    content: [
-      "Ett timmerhus utstrålar värme och karaktär. Med massiva timmerstockar som bärande konstruktion skapas ett hus med unika egenskaper – naturlig andning, hög hållbarhet och en tidlös estetik.",
-      "Vi arbetar med både traditionella metoder och moderna lösningar för att skapa timmerhus som kombinerar det bästa av två världar.",
-      "Våra timmerhus byggs för att stå i generationer. Vi utgår ifrån Hallen och tar oss an timmerhusprojekt i hela Jämtland."
-    ],
-    features: ["Erfarenhet av timmerhus", "Traditionellt hantverk", "Modern komfort", "Hållbara material", "Anpassat efter dina önskemål"]
+    features: ["Lösvirkeshus – skräddarsydda lösningar", "Timmerhus – traditionellt hantverk", "Jordbruksbyggnader godkända av Länsstyrelsen", "Totalentreprenad eller löpande kostnad", "ROT-avdrag där aktuellt", "Lokal förankring i Jämtland"]
   },
   "om-och-tillbyggnader": {
-    title: "Om- och tillbyggnader",
+    title: "Om- & tillbyggnader",
     metaTitle: "Om- och tillbyggnader i Jämtland | Aronsgård Bygg",
     metaDesc: "Professionella om- och tillbyggnader i Jämtland. Utöka ditt hem med kvalitet. Kontakta Aronsgård Bygg & Service.",
     img: imgTillbyggnad,
     alt: "Tillbyggnad av hus i Jämtland med träkonstruktion",
     intro: "Behöver du mer utrymme eller vill modernisera ditt hem? Vi genomför om- och tillbyggnader med samma kvalitetstänk som vid nybyggnation.",
     content: [
-      "En om- eller tillbyggnad är ett utmärkt sätt att öka boyttan och anpassa ditt hem efter förändrade behov – utan att behöva flytta.",
-      "Vi hanterar allt från enklare renoveringar till större tillbyggnadsprojekt med omsorg om varje detalj.",
-      "Vi erbjuder om- och tillbyggnader i hela Jämtland. Fast pris eller löpande kostnad, och ROT-avdrag används där det är aktuellt."
+      "En om- eller tillbyggnad är ett utmärkt sätt att öka boyttan och anpassa ditt hem efter förändrade behov – utan att behöva flytta. Vi ser till att tillbyggnaden smälter in med det befintliga huset, både konstruktionsmässigt och estetiskt.",
+      "Vi hanterar allt från enklare renoveringar till större tillbyggnadsprojekt – extra rum, altaner med tak, nya våningsplan och garage.",
+      "Vi erbjuder om- och tillbyggnader i hela Jämtland med fast pris eller löpande kostnad. ROT-avdrag används där det är aktuellt."
     ],
-    features: ["Sömlös integration med befintligt hus", "Köksrenoveringar", "Tillbyggnader och altaner", "ROT-avdrag", "Fast pris eller löpande"]
+    features: ["Sömlös integration med befintligt hus", "Tillbyggnader och altaner", "Garage och förråd", "Planlösningsförändringar", "ROT-avdrag", "Fast pris eller löpande"]
+  },
+  renoveringar: {
+    title: "Renoveringar",
+    metaTitle: "Renoveringar i Jämtland | Aronsgård Bygg & Service",
+    metaDesc: "Professionella renoveringar i Jämtland – fasad, badrum, kök och helrenovering. Kontakta Aronsgård Bygg & Service för offert.",
+    img: imgRenovering,
+    alt: "Renovering av husfasad med ny panel och målning i Jämtland",
+    intro: "Vi utför alla typer av renoveringar i Jämtland – från fasadrenoveringar och badrumsbyten till köksrenoveringar och helrenoveringar av hela fastigheter.",
+    content: [
+      "En renovering kan innebära allt från att byta ut en sliten fasad till att totalrenovera ett helt hem. Vi har erfarenhet av alla typer av renoveringsprojekt och ser till att resultatet håller hög kvalitet.",
+      "Fasadrenoveringar är ett av våra specialområden – vi hanterar panelbyte, tilläggsisolering, fogning, grundning och slutmålning. Vi kan även byta fönster och dörrar i samband med arbetet.",
+      "Oavsett om det gäller en äldre timmerstuga eller ett modernt hus anpassar vi oss efter husets karaktär och dina önskemål. ROT-avdrag tillämpas där det är aktuellt."
+    ],
+    features: ["Fasadrenoveringar", "Badrumsrenoveringar", "Köksbyten", "Helrenoveringar", "Tilläggsisolering", "Fönster- och dörrbyte"]
   },
   takbyten: {
     title: "Takbyten",
     metaTitle: "Takbyten i Jämtland | Aronsgård Bygg & Service",
-    metaDesc: "Professionella takbyten i Jämtland. Komplett takbyte med material av hög kvalitet. Ring 073-800 09 79 för offert.",
+    metaDesc: "Professionella takbyten i Jämtland. Komplett takbyte med klimatanpassade material. Ring 073-800 09 79 för offert.",
     img: imgTakbyte,
     alt: "Takbyte på hus i Jämtland med ny takbeläggning",
-    intro: "Ett takbyte är en stor investering som skyddar ditt hem och höjer dess värde. Vi utför kompletta takbyten med material av högsta kvalitet.",
+    intro: "Taket är husets viktigaste skydd. Vi utför kompletta takbyten i Jämtland med material av högsta kvalitet, anpassade för det nordiska klimatet.",
     content: [
-      "Taket är husets viktigaste skydd mot väder och vind. I Jämtlands krävande klimat ställs höga krav på takets konstruktion och material.",
-      "Vi utför hela processen – från rivning till ny takbeläggning med beprövade material som tål det nordiska klimatet.",
+      "I Jämtlands krävande klimat med tunga snölaster och kraftiga temperaturväxlingar ställs höga krav på takets konstruktion och material. Ett välutfört takbyte ger trygghet i många år framöver.",
+      "Vi utför hela processen – från rivning av gammalt tak till läktning, undertak, isolering och ny takbeläggning. Vi arbetar med beprövade material som tål det nordiska klimatet.",
       "Kontakta oss för en kostnadsfri offert på takbyte i Hallen, Frösön och hela Jämtland."
     ],
-    features: ["Komplett takbyte", "Klimatanpassade material", "Isolering och ventilation", "Plåt- och betongtak", "Garanti på utfört arbete"]
+    features: ["Komplett takbyte", "Klimatanpassade material", "Isolering och ventilation", "Plåt- och betongtak", "Garanti på utfört arbete", "ROT-avdrag"]
   },
-  fasadrenoveringar: {
-    title: "Fasadrenoveringar",
-    metaTitle: "Fasadrenoveringar i Jämtland | Aronsgård Bygg",
-    metaDesc: "Professionell fasadrenovering i Jämtland. Panel, isolering och målning. Kontakta Aronsgård Bygg & Service.",
-    img: imgFasad,
-    alt: "Fasadrenovering av hus med ny panel och målning",
-    intro: "En fasadrenovering ger ditt hus nytt liv och skyddar det mot fukt och väder. Professionellt resultat i hela Jämtland.",
+  finsnickeri: {
+    title: "Finsnickeri",
+    metaTitle: "Finsnickeri i Jämtland | Aronsgård Bygg & Service",
+    metaDesc: "Skräddarsytt finsnickeri i Jämtland – kök, inredning, möbler och detaljarbeten. Kontakta Aronsgård Bygg & Service.",
+    img: imgFinsnickeri,
+    alt: "Snickare arbetar med detaljerat träarbete i verkstad",
+    intro: "Vi utför skräddarsytt finsnickeri i Jämtland – från platsbyggda kök och garderober till unika möbler och detaljerade träarbeten.",
     content: [
-      "Fasaden utsätts dagligen för sol, regn, snö och kyla. Med åren kan panel spricka och färg flagna. En professionell fasadrenovering åtgärdar dessa problem.",
-      "Vi hanterar alla moment – byte av panel, tilläggsisolering, fogning, grundning och slutmålning.",
-      "Oavsett om det gäller en äldre timmerstuga eller ett modernt hus – vi anpassar oss. ROT-avdrag tillämpas där det är aktuellt."
+      "Finsnickeri handlar om precision och hantverk. Vi skapar skräddarsydda lösningar som passar just ditt hem – platsbyggda kök, garderober, bokhyllor, fönsterbänkar och andra inredningsdetaljer.",
+      "Varje projekt börjar med en dialog om dina önskemål och behov. Vi tar fram förslag, väljer material tillsammans och levererar ett resultat som är unikt för dig.",
+      "Vi arbetar med allt från klassiska trädetaljer till moderna, minimalistiska lösningar. Kvalitet och hållbarhet är alltid i fokus."
     ],
-    features: ["Panelbyte och reparation", "Tilläggsisolering", "Professionell målning", "Fönster- och dörrbyte", "ROT-avdrag"]
-  },
-  jordbruksbyggnader: {
-    title: "Jordbruksbyggnader",
-    metaTitle: "Jordbruksbyggnader i Jämtland | Aronsgård Bygg",
-    metaDesc: "Jordbruksbyggnader godkända av Länsstyrelsen i Jämtland. Ekonomibyggnader, ladugårdar och förråd. Ring 073-800 09 79.",
-    img: imgJordbruk,
-    alt: "Röd jordbruksbyggnad i jämtländskt landskap med fjäll i bakgrunden",
-    intro: "Vi bygger jordbruksbyggnader godkända av Länsstyrelsen i Jämtland. Anpassade för verksamhetens behov.",
-    content: [
-      "Jordbruk i Jämtland ställer specifika krav – byggnaderna ska tåla tunga snölaster, vara funktionella och möta alla myndighetskrav.",
-      "Vi bygger allt från ladugårdar och maskinhaller till förråd och stall, i nära samarbete med dig som kund.",
-      "Vi har god kännedom om de lokala förutsättningarna och hjälper gärna till med ansökningar och kontakt med myndigheter."
-    ],
-    features: ["Godkänt av Länsstyrelsen", "Ladugårdar och stall", "Maskinhaller", "Förråd och ekonomibyggnader", "Hjälp med tillstånd"]
+    features: ["Platsbyggda kök", "Garderober och förvaring", "Unika möbler", "Fönsterbänkar och lister", "Trappor", "Inredningsdetaljer"]
   }
 };
 
-const TjanstDetalj = () => {
+const ProjektDetalj = () => {
   const { slug } = useParams<{ slug: string }>();
   const service = slug ? serviceData[slug] : undefined;
 
@@ -172,8 +157,8 @@ const TjanstDetalj = () => {
               <img
                 src={service.img}
                 alt={service.alt}
-                width={800}
-                height={600}
+                width={896}
+                height={672}
                 className="w-full h-auto object-cover rounded-2xl"
               />
             </div>
@@ -184,4 +169,4 @@ const TjanstDetalj = () => {
   );
 };
 
-export default TjanstDetalj;
+export default ProjektDetalj;
