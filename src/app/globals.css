@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 210 20% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 20% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 20% 12%;
+
+    --primary: 210 60% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 215 25% 12%;
+    --secondary-foreground: 0 0% 96%;
+
+    --muted: 210 12% 92%;
+    --muted-foreground: 215 10% 42%;
+
+    --accent: 205 50% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 12% 87%;
+    --input: 210 12% 87%;
+    --ring: 210 60% 45%;
+
+    --radius: 0.5rem;
+
+    --timber: 210 60% 45%;
+    --timber-light: 205 50% 58%;
+    --charcoal: 215 25% 12%;
+    --charcoal-deep: 215 30% 7%;
+    --stone: 210 12% 92%;
+    --warm-white: 0 0% 98%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    @apply text-foreground;
+    letter-spacing: -0.02em;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl leading-tight font-bold;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl leading-tight font-bold;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl font-medium;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-20 md:py-28 px-4 md:px-8;
+  }
+
+  .container-narrow {
+    @apply max-w-5xl mx-auto;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Parallax – fixed fungerar inte på iOS Safari, scroll som fallback */
+  .parallax-bg {
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center;
+  }
+  @media (min-width: 768px) {
+    .parallax-bg {
+      background-attachment: fixed;
+    }
+  }
+}
