@@ -55,7 +55,7 @@ export default function ProjektPage() {
 
       {/* Karusell med luft till rubrik och footer */}
       <div className="px-4 pb-20 pt-4">
-        <div style={{ height: "520px", overflow: "clip" }}>
+        <div className="sm:h-[520px]" style={{ overflow: "clip" }}>
           <CircularGallery projects={pastProjects} />
         </div>
       </div>

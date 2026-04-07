@@ -164,7 +164,7 @@ export default function HomePage() {
                 ett nära samarbete med varje kund och är stolta över de långsiktiga
                 relationer som vuxit fram längs vägen.
               </p>
-              <div className="grid grid-cols-2 gap-x-6 gap-y-4 mb-6">
+              <div className="hidden sm:grid grid-cols-2 gap-x-6 gap-y-4 mb-6">
                 {values.map((v) => (
                   <div key={v.title} className="flex gap-2.5">
                     <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">

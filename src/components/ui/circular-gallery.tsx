@@ -151,6 +151,7 @@ function getCardSize() {
 
 export default function CircularGallery({ projects, autoRotateSpeed = 0.012 }: CircularGalleryProps) {
   const [selected, setSelected] = useState<PastProject | null>(null)
+  const [isMobile, setIsMobile] = useState(false)
   const [radius, setRadius] = useState(560)
   const [cardSize, setCardSize] = useState({ w: 240, h: 320 })
   const containerRef = useRef<HTMLDivElement>(null)
@@ -166,9 +167,10 @@ export default function CircularGallery({ projects, autoRotateSpeed = 0.012 }: C
 
   const anglePerItem = 360 / projects.length
 
-  // Anpassa radien och kortstorlek efter skärmbredd
+  // Anpassa radien, kortstorlek och mobilläge efter skärmbredd
   useEffect(() => {
     const update = () => {
+      setIsMobile(window.innerWidth < 640)
       setRadius(getRadius())
       setCardSize(getCardSize())
     }
@@ -249,7 +251,33 @@ export default function CircularGallery({ projects, autoRotateSpeed = 0.012 }: C
 
   return (
     <>
-      <div
+      {/* Mobilvy – horisontell scroll */}
+      {isMobile && (
+        <div className="w-full overflow-x-auto scrollbar-hide pb-4">
+          <div className="flex gap-4 px-4" style={{ width: "max-content" }}>
+            {projects.map((p) => (
+              <button
+                key={p.slug}
+                onClick={() => setSelected(p)}
+                className="relative rounded-xl overflow-hidden shrink-0 text-left"
+                style={{ width: 200, height: 280 }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={p.img} alt={p.imgAlt} className="absolute inset-0 w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-3">
+                  <span className="text-xs font-semibold text-sky-300 uppercase tracking-widest">{p.category}</span>
+                  <h3 className="text-white font-serif text-sm leading-snug mt-0.5">{p.title}</h3>
+                  <p className="text-white/60 text-xs mt-0.5">{p.location} · {p.year}</p>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Desktop – 3D-karusell */}
+      {!isMobile && <div
         ref={wrapperRef}
         className="relative w-full h-full flex items-center justify-center cursor-grab active:cursor-grabbing select-none"
         style={{ perspective: "2000px" }}
@@ -307,7 +335,7 @@ export default function CircularGallery({ projects, autoRotateSpeed = 0.012 }: C
             )
           })}
         </div>
-      </div>
+      </div>}
 
       <AnimatePresence>
         {selected && <ProjectModal project={selected} onClose={() => setSelected(null)} />}
