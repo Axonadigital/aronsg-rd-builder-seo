@@ -108,7 +108,7 @@
   /* Marquee – snabbare på mobil */
   @media (max-width: 640px) {
     .animate-marquee {
-      animation-duration: 18s;
+      animation-duration: 8s !important;
     }
   }
 
