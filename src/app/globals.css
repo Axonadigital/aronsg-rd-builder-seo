@@ -105,13 +105,6 @@
     display: none;
   }
 
-  /* Marquee – snabbare på mobil */
-  @media (max-width: 640px) {
-    .animate-marquee {
-      animation-duration: 8s !important;
-    }
-  }
-
   /* Parallax – fixed fungerar inte på iOS Safari, scroll som fallback */
   .parallax-bg {
     background-attachment: scroll;
